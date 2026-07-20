@@ -1,0 +1,247 @@
+/* Marco Apex Global Styling */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: #f5f5f5;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/* Review Gateway */
+
+.review-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.82),
+      rgba(0,0,0,0.95)
+    ),
+    radial-gradient(
+      circle at top,
+      #2b2b2b 0%,
+      #080808 55%
+    );
+
+  padding: 40px 20px 60px;
+}
+
+
+/* Hero */
+
+.hero {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.brand {
+  letter-spacing: 6px;
+  font-size: 0.9rem;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: #d4af37;
+  margin: 25px auto;
+}
+
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin: 20px 0 15px;
+  font-weight: 600;
+}
+
+
+.hero h2 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+
+.hero p {
+  margin: 25px auto;
+  max-width: 380px;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+
+/* Main CTA */
+
+.review-button {
+  display: block;
+  margin: 35px auto 0;
+  max-width: 360px;
+
+  padding: 17px 20px;
+
+  background: #d4af37;
+  color: #111;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  border-radius: 4px;
+}
+
+
+/* Sections */
+
+.stores,
+.about,
+.grid {
+
+  max-width: 520px;
+  margin: 55px auto 0;
+
+  text-align: center;
+}
+
+
+.stores h3,
+.about h3,
+.grid h3 {
+
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 25px;
+}
+
+
+/* Amazon Buttons */
+
+.store-button {
+
+  display: block;
+
+  margin: 14px auto;
+
+  padding: 15px;
+
+  max-width: 360px;
+
+  border: 1px solid #444;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 4px;
+
+  background: rgba(255,255,255,0.04);
+
+  transition: all .25s ease;
+
+}
+
+
+.store-button:hover {
+
+  border-color: #d4af37;
+
+  background: rgba(212,175,55,0.1);
+
+}
+
+
+/* Lower Sections */
+
+.about p,
+.grid p {
+
+  color: #cfcfcf;
+
+  line-height: 1.7;
+
+}
+
+
+.join-button {
+
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 14px 35px;
+
+  border: 1px solid #d4af37;
+
+  color: #d4af37;
+
+  text-decoration: none;
+
+  letter-spacing: 1px;
+
+}
+
+
+/* Mobile refinement */
+
+@media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero h2 {
+    font-size: 1.35rem;
+  }
+
+}.thank-you {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #d4af37;
+}
+
+
+.detected-message {
+  color: #d4af37;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+
+.store-button.recommended {
+
+  border-color: #d4af37;
+
+  background:
+    rgba(212,175,55,0.12);
+
+}.book-cover {
+
+  width: 260px;
+
+  max-width: 80%;
+
+  margin: 35px auto 10px;
+
+  display: block;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.8);
+
+}
