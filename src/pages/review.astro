@@ -4,110 +4,55 @@ import bookCover from "../assets/book-cover.png";
 ---
 
 <MainLayout title="Leave a Review | Formula One: The Soul of Speed">
+  <div
+    class="cover-background cover-background-left"
+    style={`background-image: url(${bookCover.src});`}
+    aria-hidden="true"
+  ></div>
 
-<div
-  class="cover-background cover-background-left"
-  style={`background-image: url(${bookCover.src});`}
-  aria-hidden="true"
-></div>
-
-<div
-  class="cover-background cover-background-right"
-  style={`background-image: url(${bookCover.src});`}
-  aria-hidden="true"
-></div>
+  <div
+    class="cover-background cover-background-right"
+    style={`background-image: url(${bookCover.src});`}
+    aria-hidden="true"
+  ></div>
 
   <main class="review-page">
-
     <section class="review-section">
-
-      <p class="eyebrow">
-        FORMULA ONE: THE SOUL OF SPEED
-      </p>
-
+      <p class="eyebrow">FORMULA ONE: THE SOUL OF SPEED</p>
       <h1>Leave a Review</h1>
-
-      <p class="review-intro">
-        Select your Amazon store to leave a review.
-      </p>
-
+      <p class="review-intro">Select your Amazon store to leave a review.</p>
       <p id="detected-message" class="detected-message"></p>
 
       <div class="store-buttons">
-
-        <a
-          id="uk"
-          href="https://www.amazon.co.uk/review/create-review?asin=B0G7KRKL32"
-          class="store-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>🇬🇧</span>
-          Amazon UK
+        <a id="uk" href="https://www.amazon.co.uk/review/create-review?asin=B0G7KRKL32" class="store-button" target="_blank" rel="noopener noreferrer">
+          <span>🇬🇧</span> Amazon UK
         </a>
 
-        <a
-          id="usa"
-          href="https://www.amazon.com/review/create-review?asin=B0G7KRKL32"
-          class="store-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>🇺🇸</span>
-          Amazon USA
+        <a id="usa" href="https://www.amazon.com/review/create-review?asin=B0G7KRKL32" class="store-button" target="_blank" rel="noopener noreferrer">
+          <span>🇺🇸</span> Amazon USA
         </a>
 
-        <a
-          id="canada"
-          href="https://www.amazon.ca/review/create-review?asin=B0G7KRKL32"
-          class="store-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>🇨🇦</span>
-          Amazon Canada
+        <a id="canada" href="https://www.amazon.ca/review/create-review?asin=B0G7KRKL32" class="store-button" target="_blank" rel="noopener noreferrer">
+          <span>🇨🇦</span> Amazon Canada
         </a>
 
-        <a
-          id="australia"
-          href="https://www.amazon.com.au/review/create-review?asin=B0G776P2HB"
-          class="store-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>🇦🇺</span>
-          Amazon Australia
+        <a id="australia" href="https://www.amazon.com.au/review/create-review?asin=B0G776P2HB" class="store-button" target="_blank" rel="noopener noreferrer">
+          <span>🇦🇺</span> Amazon Australia
         </a>
-
       </div>
 
-      <p class="thank-you">
-        Thank you for helping this story reach more Formula One fans.
-      </p>
-
+      <p class="thank-you">Thank you for helping this story reach more Formula One fans.</p>
     </section>
 
     <div class="section-divider"></div>
 
     <section class="bonus-section">
-
       <p class="section-label">FREE READER BONUS</p>
-
       <h2>Collector’s Lap Guide</h2>
-
-      <p>
-        Access your complimentary Formula One circuit guide.
-      </p>
-
-      <a
-        href="/downloads/The_Collectors_Lap_Guide.pdf"
-        class="secondary-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <p>Access your complimentary Formula One circuit guide.</p>
+      <a href="/downloads/The_Collectors_Lap_Guide.pdf" class="secondary-button" target="_blank" rel="noopener noreferrer">
         Download the Collector's Lap Guide
       </a>
-
     </section>
 
     <div class="section-divider"></div>
@@ -115,17 +60,15 @@ import bookCover from "../assets/book-cover.png";
     <section class="grid-section">
       <p class="section-label">STAY CONNECTED</p>
       <h2>Join The Grid</h2>
-      <p>
-        Join The Grid to receive updates on new books and exclusive special offers before anyone else.
-      </p>
-      <a
-        href="https://marcoapex100.github.io/grid/"
-        class="grid-button"
-      >
-        Join The Grid
-      </a>
-    </section>
+      <p class="grid-intro">Join The Grid to receive updates on new books and exclusive special offers before anyone else.</p>
+      <p class="grid-bio">Subscribe to The Grid for thoughtful updates from Marco Apex on new books, behind-the-scenes ideas, and the stories shaping future projects. You’ll also be first to hear about exclusive releases and special offers created for readers who want to stay closer to the work.</p>
 
+      <div class="kit-form-wrap">
+        <script is:inline async data-uid="d6192121e3" src="https://marco-apex.kit.com/d6192121e3/index.js"></script>
+      </div>
+
+      <p class="privacy-note">You can unsubscribe at any time.</p>
+    </section>
   </main>
 
   <script>
@@ -148,26 +91,16 @@ import bookCover from "../assets/book-cover.png";
       .then((data) => {
         const country = data.country_code;
         const buttonId = countryMap[country];
-
         if (!buttonId) return;
 
         const button = document.getElementById(buttonId);
         const message = document.getElementById("detected-message");
 
-        if (button) {
-          button.classList.add("recommended");
-        }
-
-        if (message) {
-          message.textContent =
-            "Recommended for you: " + countryNames[country];
-        }
+        if (button) button.classList.add("recommended");
+        if (message) message.textContent = "Recommended for you: " + countryNames[country];
       })
-      .catch(() => {
-        console.log("Marketplace detection unavailable");
-      });
+      .catch(() => console.log("Marketplace detection unavailable"));
   </script>
-
 </MainLayout>
 
 <style>
@@ -186,36 +119,16 @@ import bookCover from "../assets/book-cover.png";
 .cover-background-right{
   right:0;
   opacity:.16;
-  -webkit-mask-image:linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0,0,0,.25) 28%,
-    black 100%
-  );
-  mask-image:linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(0,0,0,.25) 28%,
-    black 100%
-  );
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.25) 28%,black 100%);
+  mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.25) 28%,black 100%);
 }
 
 .cover-background-left{
   left:0;
   opacity:.08;
   transform:scaleX(-1);
-  -webkit-mask-image:linear-gradient(
-    to left,
-    transparent 0%,
-    rgba(0,0,0,.25) 28%,
-    black 100%
-  );
-  mask-image:linear-gradient(
-    to left,
-    transparent 0%,
-    rgba(0,0,0,.25) 28%,
-    black 100%
-  );
+  -webkit-mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,.25) 28%,black 100%);
+  mask-image:linear-gradient(to left,transparent 0%,rgba(0,0,0,.25) 28%,black 100%);
 }
 
 .review-page{
@@ -256,12 +169,25 @@ h2{
 
 .review-intro,
 .bonus-section p,
-.grid-section p{
-  max-width:590px;
-  margin:0 auto 30px;
+.grid-intro,
+.grid-bio{
+  max-width:620px;
+  margin-left:auto;
+  margin-right:auto;
   font-size:1.08rem;
   line-height:1.7;
+}
+
+.review-intro,
+.bonus-section p,
+.grid-intro{
+  margin-bottom:30px;
   opacity:.82;
+}
+
+.grid-bio{
+  margin-bottom:30px;
+  opacity:.68;
 }
 
 .detected-message{
@@ -293,10 +219,7 @@ h2{
   border-radius:10px;
   font-weight:700;
   text-decoration:none;
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    background .2s ease;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
 }
 
 .store-button:hover{
@@ -331,76 +254,53 @@ h2{
   width:100%;
   height:1px;
   margin:72px 0;
-  background:linear-gradient(
-    to right,
-    transparent,
-    rgba(255,255,255,.2),
-    transparent
-  );
+  background:linear-gradient(to right,transparent,rgba(255,255,255,.2),transparent);
 }
 
-.secondary-button,
-.grid-button{
+.secondary-button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   min-width:230px;
   min-height:58px;
   padding:15px 28px;
+  color:inherit;
+  border:1px solid var(--accent);
   border-radius:999px;
   font-weight:700;
   text-decoration:none;
-  transition:
-    background .2s ease,
-    color .2s ease,
-    transform .2s ease;
-}
-
-.secondary-button{
-  color:inherit;
-  border:1px solid var(--accent);
-}
-
-.grid-button{
-  background:var(--accent);
-  color:#111;
-  border:1px solid var(--accent);
-  position:relative;
-  z-index:5;
-  cursor:pointer;
-}
-
-.secondary-button:hover,
-.grid-button:hover{
-  transform:translateY(-2px);
+  transition:background .2s ease,color .2s ease,transform .2s ease;
 }
 
 .secondary-button:hover{
+  transform:translateY(-2px);
   background:var(--accent);
   color:#111;
 }
 
-.grid-button:hover{
-  filter:brightness(1.06);
+.kit-form-wrap{
+  width:min(100%,620px);
+  margin:0 auto;
+  text-align:left;
+  position:relative;
+  z-index:5;
+}
+
+.privacy-note{
+  margin:14px auto 0;
+  font-size:.78rem;
+  line-height:1.55;
+  opacity:.55;
 }
 
 @media (max-width:700px){
-
   .cover-background{
     width:100%;
     height:55vh;
     opacity:.08;
     background-position:center top;
-    -webkit-mask-image:linear-gradient(
-      to bottom,
-      black 0%,
-      transparent 100%
-    );
-    mask-image:linear-gradient(
-      to bottom,
-      black 0%,
-      transparent 100%
-    );
+    -webkit-mask-image:linear-gradient(to bottom,black 0%,transparent 100%);
+    mask-image:linear-gradient(to bottom,black 0%,transparent 100%);
   }
 
   .review-page{
@@ -419,7 +319,5 @@ h2{
   .store-button.recommended::after{
     display:none;
   }
-
 }
-
 </style>
