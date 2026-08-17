@@ -25,27 +25,17 @@ import bookCover from "../assets/book-cover.png";
         Join The Grid to receive updates on new books and exclusive special offers before anyone else.
       </p>
 
-      <form id="grid-form" class="signup-form" action="#" method="post">
-        <label for="email">Email address</label>
-        <div class="form-row">
-          <input
-            id="email"
-            name="email_address"
-            type="email"
-            autocomplete="email"
-            inputmode="email"
-            placeholder="you@example.com"
-            required
-          />
-          <button type="submit">Join The Grid</button>
-        </div>
+      <p class="bio">
+        Subscribe to The Grid for thoughtful updates from Marco Apex on new books, behind-the-scenes ideas, and the stories shaping future projects. You’ll also be first to hear about exclusive releases and special offers created for readers who want to stay closer to the work.
+      </p>
 
-        <p class="privacy-note">
-          By joining, you agree to receive email updates from Marco Apex. You can unsubscribe at any time.
-        </p>
+      <div class="kit-form-wrap">
+        <script is:inline async data-uid="d6192121e3" src="https://marco-apex.kit.com/d6192121e3/index.js"></script>
+      </div>
 
-        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
-      </form>
+      <p class="privacy-note">
+        You can unsubscribe at any time.
+      </p>
 
       <div class="divider"></div>
 
@@ -57,20 +47,6 @@ import bookCover from "../assets/book-cover.png";
       </p>
     </section>
   </main>
-
-  <script>
-    const form = document.getElementById("grid-form");
-    const message = document.getElementById("form-message");
-
-    form?.addEventListener("submit", (event) => {
-      if (form.getAttribute("action") === "#") {
-        event.preventDefault();
-        if (message) {
-          message.textContent = "Email signup is being connected. Please check back shortly.";
-        }
-      }
-    });
-  </script>
 </MainLayout>
 
 <style>
@@ -132,66 +108,29 @@ h1{
   margin:0 0 24px;
 }
 
-.intro{
+.intro,
+.bio{
   max-width:620px;
-  margin:0 auto 38px;
-  font-size:1.12rem;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:1.08rem;
   line-height:1.75;
-  opacity:.84;
 }
 
-.signup-form{
+.intro{
+  margin-bottom:18px;
+  opacity:.9;
+}
+
+.bio{
+  margin-bottom:34px;
+  opacity:.68;
+}
+
+.kit-form-wrap{
   width:min(100%,620px);
   margin:0 auto;
-}
-
-.signup-form label{
-  display:block;
-  margin-bottom:10px;
   text-align:left;
-  font-size:.9rem;
-  font-weight:700;
-}
-
-.form-row{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:12px;
-}
-
-input{
-  min-height:58px;
-  width:100%;
-  padding:0 18px;
-  color:inherit;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:10px;
-  font:inherit;
-  outline:none;
-}
-
-input:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 1px var(--accent);
-}
-
-button{
-  min-height:58px;
-  padding:0 26px;
-  border:1px solid var(--accent);
-  border-radius:10px;
-  background:var(--accent);
-  color:#111;
-  font:inherit;
-  font-weight:800;
-  cursor:pointer;
-  transition:transform .2s ease,filter .2s ease;
-}
-
-button:hover{
-  transform:translateY(-2px);
-  filter:brightness(1.06);
 }
 
 .privacy-note{
@@ -199,14 +138,6 @@ button:hover{
   font-size:.78rem;
   line-height:1.55;
   opacity:.55;
-}
-
-.form-message{
-  min-height:24px;
-  margin:16px 0 0;
-  color:var(--accent);
-  font-size:.9rem;
-  font-weight:700;
 }
 
 .divider{
@@ -246,14 +177,6 @@ button:hover{
   .grid-page{
     width:min(100% - 28px,760px);
     padding:56px 0 64px;
-  }
-
-  .form-row{
-    grid-template-columns:1fr;
-  }
-
-  button{
-    width:100%;
   }
 }
 </style>
