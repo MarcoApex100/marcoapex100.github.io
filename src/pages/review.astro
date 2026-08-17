@@ -100,14 +100,25 @@ import bookCover from "../assets/book-cover.png";
       </p>
 
       <a
-  href="/downloads/The_Collectors_Lap_Guide.pdf"
-  class="secondary-button"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Download the Collector's Lap Guide
-</a>
+        href="/downloads/The_Collectors_Lap_Guide.pdf"
+        class="secondary-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download the Collector's Lap Guide
+      </a>
 
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="grid-section">
+      <p class="section-label">STAY CONNECTED</p>
+      <h2>Join The Grid</h2>
+      <p>
+        Join The Grid to receive updates on new books and exclusive special offers before anyone else.
+      </p>
+      <a href="/grid/" class="grid-button">Join The Grid</a>
     </section>
 
   </main>
@@ -323,15 +334,14 @@ h2{
   );
 }
 
-.secondary-button{
+.secondary-button,
+.grid-button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   min-width:230px;
   min-height:58px;
   padding:15px 28px;
-  color:inherit;
-  border:1px solid var(--accent);
   border-radius:999px;
   font-weight:700;
   text-decoration:none;
@@ -341,10 +351,29 @@ h2{
     transform .2s ease;
 }
 
-.secondary-button:hover{
-  transform:translateY(-2px);
+.secondary-button{
+  color:inherit;
+  border:1px solid var(--accent);
+}
+
+.grid-button{
   background:var(--accent);
   color:#111;
+  border:1px solid var(--accent);
+}
+
+.secondary-button:hover,
+.grid-button:hover{
+  transform:translateY(-2px);
+}
+
+.secondary-button:hover{
+  background:var(--accent);
+  color:#111;
+}
+
+.grid-button:hover{
+  filter:brightness(1.06);
 }
 
 @media (max-width:700px){
