@@ -29,12 +29,17 @@ import bookCover from "../assets/book-cover.png";
         Subscribe to The Grid for thoughtful updates from Marco Apex on new books, behind-the-scenes ideas, and the stories shaping future projects. You’ll also be first to hear about exclusive releases and special offers created for readers who want to stay closer to the work.
       </p>
 
-      <div class="kit-form-wrap">
-        <script is:inline async data-uid="d6192121e3" src="https://marco-apex.kit.com/d6192121e3/index.js"></script>
-      </div>
+      <a
+        class="join-button"
+        href="https://marco-apex.kit.com/d6192121e3"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join The Grid
+      </a>
 
       <p class="privacy-note">
-        You can unsubscribe at any time.
+        Opens the secure Kit signup form. You can unsubscribe at any time.
       </p>
 
       <div class="divider"></div>
@@ -127,10 +132,28 @@ h1{
   opacity:.68;
 }
 
-.kit-form-wrap{
-  width:min(100%,620px);
-  margin:0 auto;
-  text-align:left;
+.join-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:230px;
+  min-height:58px;
+  padding:15px 28px;
+  color:#111;
+  background:var(--accent);
+  border:1px solid var(--accent);
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  cursor:pointer;
+  position:relative;
+  z-index:10;
+  transition:transform .2s ease,filter .2s ease;
+}
+
+.join-button:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.06);
 }
 
 .privacy-note{
@@ -177,6 +200,10 @@ h1{
   .grid-page{
     width:min(100% - 28px,760px);
     padding:56px 0 64px;
+  }
+
+  .join-button{
+    width:min(100%,360px);
   }
 }
 </style>
