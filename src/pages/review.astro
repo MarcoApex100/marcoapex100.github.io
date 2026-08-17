@@ -63,11 +63,16 @@ import bookCover from "../assets/book-cover.png";
       <p class="grid-intro">Join The Grid to receive updates on new books and exclusive special offers before anyone else.</p>
       <p class="grid-bio">Subscribe to The Grid for thoughtful updates from Marco Apex on new books, behind-the-scenes ideas, and the stories shaping future projects. You’ll also be first to hear about exclusive releases and special offers created for readers who want to stay closer to the work.</p>
 
-      <div class="kit-form-wrap">
-        <script is:inline async data-uid="d6192121e3" src="https://marco-apex.kit.com/d6192121e3/index.js"></script>
-      </div>
+      <a
+        href="https://marco-apex.kit.com/d6192121e3"
+        class="grid-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join The Grid
+      </a>
 
-      <p class="privacy-note">You can unsubscribe at any time.</p>
+      <p class="privacy-note">Opens the secure Kit signup form. You can unsubscribe at any time.</p>
     </section>
   </main>
 
@@ -257,33 +262,46 @@ h2{
   background:linear-gradient(to right,transparent,rgba(255,255,255,.2),transparent);
 }
 
-.secondary-button{
+.secondary-button,
+.grid-button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   min-width:230px;
   min-height:58px;
   padding:15px 28px;
-  color:inherit;
-  border:1px solid var(--accent);
   border-radius:999px;
   font-weight:700;
   text-decoration:none;
+  cursor:pointer;
+  position:relative;
+  z-index:10;
   transition:background .2s ease,color .2s ease,transform .2s ease;
 }
 
-.secondary-button:hover{
+.secondary-button{
+  color:inherit;
+  border:1px solid var(--accent);
+}
+
+.grid-button{
+  color:#111;
+  background:var(--accent);
+  border:1px solid var(--accent);
+}
+
+.secondary-button:hover,
+.grid-button:hover{
   transform:translateY(-2px);
+}
+
+.secondary-button:hover{
   background:var(--accent);
   color:#111;
 }
 
-.kit-form-wrap{
-  width:min(100%,620px);
-  margin:0 auto;
-  text-align:left;
-  position:relative;
-  z-index:5;
+.grid-button:hover{
+  filter:brightness(1.06);
 }
 
 .privacy-note{
@@ -318,6 +336,10 @@ h2{
 
   .store-button.recommended::after{
     display:none;
+  }
+
+  .grid-button{
+    width:min(100%,360px);
   }
 }
 </style>
