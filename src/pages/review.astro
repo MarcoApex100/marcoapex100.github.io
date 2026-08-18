@@ -63,16 +63,11 @@ import bookCover from "../assets/book-cover.png";
       <p class="grid-intro">Join The Grid to receive updates on new books and exclusive special offers before anyone else.</p>
       <p class="grid-bio">Subscribe to The Grid for thoughtful updates from Marco Apex on new books, behind-the-scenes ideas, and the stories shaping future projects. You’ll also be first to hear about exclusive releases and special offers created for readers who want to stay closer to the work.</p>
 
-      <a
-        href="https://marco-apex.kit.com/d6192121e3"
-        class="grid-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="/grid/" class="grid-button">
         Join The Grid
       </a>
 
-      <p class="privacy-note">Opens the secure Kit signup form. You can unsubscribe at any time.</p>
+      <p class="privacy-note">You can unsubscribe at any time.</p>
     </section>
   </main>
 
@@ -148,6 +143,10 @@ import bookCover from "../assets/book-cover.png";
 .bonus-section,
 .grid-section{
   text-align:center;
+  border:1.5px solid rgba(255,255,255,.92);
+  border-radius:22px;
+  padding:40px 28px 44px;
+  background:rgba(255,255,255,.02);
 }
 
 .eyebrow,
@@ -258,8 +257,8 @@ h2{
 .section-divider{
   width:100%;
   height:1px;
-  margin:72px 0;
-  background:linear-gradient(to right,transparent,rgba(255,255,255,.2),transparent);
+  margin:28px 0;
+  background:transparent;
 }
 
 .secondary-button,
@@ -276,32 +275,19 @@ h2{
   cursor:pointer;
   position:relative;
   z-index:10;
-  transition:background .2s ease,color .2s ease,transform .2s ease;
-}
-
-.secondary-button{
-  color:inherit;
-  border:1px solid var(--accent);
-}
-
-.grid-button{
-  color:#111;
-  background:var(--accent);
-  border:1px solid var(--accent);
+  transition:background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+  color:#ffd84d;
+  border:2px solid #ffd84d;
+  background:transparent;
+  box-shadow:0 0 0 1px rgba(255,216,77,.22),0 0 16px rgba(255,216,77,.08);
 }
 
 .secondary-button:hover,
 .grid-button:hover{
   transform:translateY(-2px);
-}
-
-.secondary-button:hover{
-  background:var(--accent);
+  background:#ffd84d;
   color:#111;
-}
-
-.grid-button:hover{
-  filter:brightness(1.06);
+  box-shadow:0 0 20px rgba(255,216,77,.22);
 }
 
 .privacy-note{
@@ -326,19 +312,27 @@ h2{
     padding:58px 0 70px;
   }
 
+  .review-section,
+  .bonus-section,
+  .grid-section{
+    padding:30px 20px 34px;
+    border-radius:18px;
+  }
+
   .store-buttons{
     grid-template-columns:1fr;
   }
 
   .section-divider{
-    margin:55px 0;
+    margin:22px 0;
   }
 
   .store-button.recommended::after{
     display:none;
   }
 
-  .grid-button{
+  .grid-button,
+  .secondary-button{
     width:min(100%,360px);
   }
 }
