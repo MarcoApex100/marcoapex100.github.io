@@ -96,6 +96,10 @@ import bookCover from "../assets/book-cover.png";
 .grid-card{
   width:100%;
   text-align:center;
+  border:1.5px solid rgba(255,255,255,.92);
+  border-radius:22px;
+  padding:48px 32px;
+  background:rgba(255,255,255,.02);
 }
 
 .eyebrow{
@@ -139,21 +143,24 @@ h1{
   min-width:230px;
   min-height:58px;
   padding:15px 28px;
-  color:#111;
-  background:var(--accent);
-  border:1px solid var(--accent);
+  color:#ffd84d;
+  background:transparent;
+  border:2px solid #ffd84d;
   border-radius:999px;
   font-weight:700;
   text-decoration:none;
   cursor:pointer;
   position:relative;
   z-index:10;
-  transition:transform .2s ease,filter .2s ease;
+  box-shadow:0 0 0 1px rgba(255,216,77,.22),0 0 16px rgba(255,216,77,.08);
+  transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease;
 }
 
 .join-button:hover{
   transform:translateY(-2px);
-  filter:brightness(1.06);
+  background:#ffd84d;
+  color:#111;
+  box-shadow:0 0 20px rgba(255,216,77,.22);
 }
 
 .privacy-note{
@@ -200,6 +207,11 @@ h1{
   .grid-page{
     width:min(100% - 28px,760px);
     padding:56px 0 64px;
+  }
+
+  .grid-card{
+    padding:34px 20px;
+    border-radius:18px;
   }
 
   .join-button{
